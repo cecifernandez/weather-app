@@ -7,7 +7,7 @@ const weatherAPI = (() => {
           "&appid=3c76638c4deaee40b1a940d5c11f3d55"
       );
       const data = await response.json();
-      return data.coord;
+      return data;
     } catch (err) {
       console.error("error occured: ", err.message);
     }
