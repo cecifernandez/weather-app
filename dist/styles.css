@@ -1,10 +1,22 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-#image{
+#image {
     height: 100vh;
     background-size: cover !important;
     background-repeat: no-repeat !important;
+}
+
+.city {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+#icon {
+    display: flex;
+    justify-content: center;
+    width: 120px;
 }

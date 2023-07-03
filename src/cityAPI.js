@@ -6,7 +6,7 @@ const cityAPI = (() => {
       const response = await fetch(
         "https://api.unsplash.com/search/photos?query=" +
           query +
-          "&client_id=-IshjZJzwRwoK5HToCA8cp_K9COyXK25Fhqa-Fh82tg",
+          "city&client_id=-IshjZJzwRwoK5HToCA8cp_K9COyXK25Fhqa-Fh82tg",
         { mode: "cors" }
       );
 
@@ -15,16 +15,16 @@ const cityAPI = (() => {
       }
 
       const data = await response.json();
-      console.log(data);
 
       if (
         data.results &&
         data.results.length > 0 &&
         data.results[0].urls &&
-        data.results[0].urls.full
+        data.results[0].urls.regular
       ) {
+        const randomIndex = Math.floor(Math.random() * data.results.length);
         img.style.background =
-          "url(" + data["results"][0]["urls"]["regular"] + ")";
+          "url(" + data.results[randomIndex].urls.regular + ")";
       } else {
         throw new Error("Invalid image data received.");
       }

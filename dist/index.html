@@ -3,12 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather App</title>
   </head>
   <body>
     <main>
-      <div id="image"></div>
+      <div class="weather-card">
+        <h1 class="city" id="cityTitle"></h1>
+        <p class="feelsLike" id="feelsLike"></p>
+        <p class="temp" id="temp"></p>
+        <p class="humidity" id="humidity"></p>
+        <p class="forecast" id="forecast"></p>
+        <img id="icon" class="icon"></img>
+      </div>
+      <div id="image" alt=""></div>
       <input type="text" id="city" />
       <button id="search">Search</button>
     </main>

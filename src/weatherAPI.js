@@ -1,4 +1,14 @@
 const weatherAPI = (() => {
+  function convertData(data) {
+    const {
+      name: cityName,
+      main: { temp, feels_like: feelsLike, humidity },
+      weather: [{ icon, main: forecast }],
+    } = data;
+
+    return { cityName, temp, feelsLike, humidity, icon, forecast };
+  }
+
   async function getLocation(city) {
     try {
       const response = await fetch(
@@ -6,10 +16,10 @@ const weatherAPI = (() => {
           city +
           "&appid=3c76638c4deaee40b1a940d5c11f3d55"
       );
-      const data = await response.json();
+      const data = convertData(await response.json());
       return data;
     } catch (err) {
-      console.error("error occured: ", err.message);
+      console.error("error occurred: ", err.message);
     }
   }
 
