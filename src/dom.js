@@ -9,13 +9,17 @@ const domView = (() => {
     const humidity = document.getElementById("humidity");
     const forecast = document.getElementById("forecast");
     const temp = document.getElementById("temp");
+
     const iconImg = changeData.changeIcon(weatherData.icon);
+    const tempF = changeData.changeToF(weatherData.temp);
+    const tempC = changeData.changeToC(weatherData.temp);
+
     cityName.textContent = `${weatherData.cityName}`;
     icon.src = "./assets/img/" + iconImg;
     feelsLike.textContent = `${weatherData.feelsLike}`;
     humidity.textContent = `${weatherData.humidity}`;
     forecast.textContent = `${weatherData.forecast}`;
-    temp.textContent = `${weatherData.temp}º K`;
+    temp.textContent = tempF + " ºF";
   }
 
   return { showResult };
