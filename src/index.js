@@ -10,7 +10,9 @@ async function defaultDom() {
   domView.showResult(defaultData);
 }
 
+
 defaultDom();
+
 
 searchBtn.addEventListener("click", async () => {
   const userCity = document.getElementById("city").value;
