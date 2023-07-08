@@ -4,27 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <title>Weather App</title>
   </head>
   <body>
     <main>
       <div id="image" class="image-city"></div>
       <div class="search">
-        <button id="search">Search</button>
-        <input type="text" id="city" />
+        <input type="text" id="city" class="search-box" />
+        <button id="search" class="search-btn" ><img class="search-icon" src="./assets/img/search-icon.svg" alt="" srcset=""></button>
       </div>
       <div class="city-card">
-        <h1 class="city" id="cityTitle"></h1>
+        <div class="temp-e">
+          <h1 class="city" id="cityTitle"></h1>
+          <p class="temp" id="temp"> </p>
+          <p class="feelsLike" id="feelsLike"></p>
+          <p class="humidity" id="humidity"></p>
+        </div>
         <div class="forecast-el">
           <img id="icon" class="icon"></img>
           <p class="forecast" id="forecast"></p>
         </div>
       </div>
-      <div class="weather-card">
-        <p class="temp" id="temp"></p>
-        <p class="feelsLike" id="feelsLike"></p>
-        <p class="humidity" id="humidity"></p>
-      </div>
+      <div class="toggle" id="toggle-btn">
+          <input type="checkbox" id="unitSwitch" class="toggle-checkbox" />
+          <label for="unitSwitch" class="toggle-label"></label>
+        </div>
+      
+      
     </main>
     <script src="main.js"></script>
   </body>
